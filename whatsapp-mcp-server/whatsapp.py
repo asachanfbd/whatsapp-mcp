@@ -212,6 +212,7 @@ def list_messages(
             
             return format_messages_list(messages_with_context, show_chat_info=True)
             
+        result.reverse()  # Reverse to maintain chronological order
         # Format and display messages without context
         return format_messages_list(result, show_chat_info=True)    
         
