@@ -55,6 +55,9 @@ def list_messages(
         context_before: Number of messages to include before each match (default 1)
         context_after: Number of messages to include after each match (default 1)
     """
+    sender_phone_number = None # removing sender phone number filter — Doesn't look useful and AI is not able to use it properly.
+    include_context = False # removing context — Doesn't look useful and Function is not implemented correctly.
+    
     messages = whatsapp_list_messages(
         after=after,
         before=before,

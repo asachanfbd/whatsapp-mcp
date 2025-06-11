@@ -75,7 +75,7 @@ def get_sender_name(sender_jid: str) -> str:
                 FROM chats
                 WHERE jid LIKE ?
                 LIMIT 1
-            """, (f"%{phone_part}%",))
+            """, (f"%{phone_part}@%",))
             
             result = cursor.fetchone()
         
@@ -214,7 +214,7 @@ def list_messages(
             
         result.reverse()  # Reverse to maintain chronological order
         # Format and display messages without context
-        return format_messages_list(result, show_chat_info=True)    
+        return format_messages_list(result, show_chat_info=False)
         
     except sqlite3.Error as e:
         print(f"Database error: {e}")
